@@ -41,7 +41,7 @@ python -m SimpleHTTPServer 18080
 
 ### 步骤4. 浏览器调看视频（建议使用Chrome）
 
-在浏览器上输入WEB容器地址即可播放，测试延时在1秒内，而且经过几个小时长时间测试，延时没有基本偏差，不过webrtc-streamer CPU偏高，一路720P大约占用了63.8的1核CPU。
+在浏览器上输入WEB容器地址即可播放，测试延时在1秒内，而且经过几个小时长时间测试，延时没有基本偏差，不过webrtc-streamer CPU偏高，一路720P大约占用了63.8%的CPU。
 
 ```
 http://localhost:18080/

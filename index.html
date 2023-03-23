@@ -1,0 +1,17 @@
+<html>
+<head>
+<script src="adapter.min.js" ></script>
+<script src="webrtcstreamer.js"></script>
+<script>
+    var webRtcServer      = null;
+    window.onload         = function() {
+        webRtcServer      = new WebRtcStreamer("video","http://192.168.21.223:8000");
+	webRtcServer.connect("rtsp://admin:admin@192.168.21.224:554/Streaming/Channels/101?transportmode=unicast&amp;profile=Profile_1");
+    }
+    window.onbeforeunload = function() { webRtcServer.disconnect(); }
+</script>
+</head>
+<body>
+    <video id="video" autoplay muted/>
+</body>
+</html>

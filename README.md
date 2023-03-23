@@ -1,6 +1,6 @@
 # rtsp-webrtc-demo
 
-WEB浏览器要调看摄像头视频，通常有flash插件、HLS拉流、WEBRTC 3种方式，随着flash被禁用，若要实现低延时，需要使用到WEBRTC，很多浏览器已经支持该框架，本文旨在利用webrtcstremer搭建一个DEMO
+WEB浏览器要调看摄像头视频，通常有flash插件、HLS拉流、WEBRTC 3种方式，随着flash被禁用，若要实现低延时需要使用到WEBRTC，很多主流浏览器已经支持该框架，本文旨在利用webrtcstremer搭建一个DEMO。
 
 ## 安装步骤
 

@@ -15,8 +15,9 @@ systemctl start docker
 安装webrtc-streamer服务
 ```
 docker pull mpromonent/webrtc-streamer
-docker run -itd -p 8000:8000 --name webrtcstremer mpromonent/webrtc-streamer
+docker run -itd -p 8000:8000 --network=host --name webrtcstremer mpromonent/webrtc-streamer
 ```
+这里需要增加--network=host，否则会把docker容器的IP返回给WEB前端，这样就无法建立通讯
 
 ### 步骤2. 修改index.html中的服务地址和RTSP流地址
 

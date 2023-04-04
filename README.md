@@ -49,3 +49,9 @@ http://localhost:18080/
 ```
 
 ![](https://github.com/smallmuou/rtsp-webrtc-demo/blob/main/demo.jpg)
+
+### 附：流程图
+
+通过对js源码分析梳理出如下流程图：
+
+![](https://github.com/smallmuou/rtsp-webrtc-demo/blob/main/webrtc-steamer-workflow.jpg)

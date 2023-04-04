@@ -40,6 +40,34 @@ python -m SimpleHTTPServer 18080
 
 这里需要注意的是，一定要把上述文件放在WEB容器，如果直接打开是无法播放
 
+若要部署到NGINX容器下，可以参考如下配置：
+
+/etc/nginx/conf.d/default.conf
+```
+server {
+  listen 443 ssl;
+  server_name  xxxxxxx;
+  ssl_certificate /etc/nginx/ssl/xxxxxx.pem;
+  ssl_certificate_key /etc/nginx/ssl/xxxxxx.key;
+  ssl_session_timeout 5m;
+  ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+  ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;
+  ssl_prefer_server_ciphers on;
+
+
+location /rtsp2webrtc {
+  root /var/www/html;
+  index index.html;
+}
+
+location / {
+  proxy_pass http://localhost:8000;
+}
+
+}
+```
+PS: xxxxxxx为你的域名及证书，部署NGINX后，index.html中new WebRtcStreamer需要修改为HTTPS地址
+
 ### 步骤4. 浏览器调看视频（建议使用Chrome）
 
 在浏览器上输入WEB容器地址即可播放，测试延时在1秒内，而且经过几个小时长时间测试，基本没有延时，服务器CPU占用55%（单核）。
